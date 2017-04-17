@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Enter the Point Co-ordinates</h3>
+  <div class="row">
+    <div class="col-md-6">
+    <label for="xCoOrdinate">X Co-ordinate</label>
+    <input type="number" [(ngModel)]="x1" id="xCoOrdinate" (change)="getMyData()" value="0" class="form-control">
+    </div>
+    <div class="col-md-6">
+    <label for="yCoOrdinate">Y Co-ordinate</label>
+    <input type="number" [(ngModel)]="y1" id="yCoOrdinate" (change)="getMyData()" value="0" class="form-control">
+    </div>
+  </div>
+<br>
+  <table class="table table-striped">
+    <thead>
+    <th>Point ID</th>
+    <th>Point Location</th>
+    <th>Distance</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let point of newDataArray">
+      <td>{{point[0]}}</td>
+      <td>{{point[1]}}</td>
+      <td>{{point[2].toFixed(4)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
